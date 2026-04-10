@@ -16,31 +16,31 @@ struct GerenciadorContatos {
     mutating func cadastrar() {
         print("Nome:")
         guard let nome = readLine(), !nome.isEmpty else {
-            print("❌ Nome inválido")
+            print("Nome inválido")
             return
         }
         
         if contatos.contains(where: { $0.nome.lowercased() == nome.lowercased() }) {
-            print("❌ Nome já cadastrado")
+            print("Nome já cadastrado")
             return
         }
         
         print("Idade:")
         guard let idadeStr = readLine(),
               let idade = Int(idadeStr) else {
-            print("❌ Idade inválida")
+            print(" Idade inválida")
             return
         }
         
         print("Telefone:")
         guard let telefone = readLine(), !telefone.isEmpty else {
-            print("❌ Telefone inválido")
+            print(" Telefone inválido")
             return
         }
         
         print("Email:")
         guard let email = readLine(), !email.isEmpty else {
-            print("❌ Email inválido")
+            print(" Email inválido")
             return
         }
         
@@ -48,13 +48,13 @@ struct GerenciadorContatos {
         contatos.append(contato)
         proximoId += 1
         
-        print("✅ Contato cadastrado com sucesso!\n")
+        print("Contato cadastrado com sucesso!\n")
     }
     
     // MARK: - Listagem
     func listar() {
         if contatos.isEmpty {
-            print("📭 Nenhum contato cadastrado")
+            print(" Nenhum contato cadastrado")
             return
         }
         
@@ -78,37 +78,37 @@ struct GerenciadorContatos {
         guard let idStr = readLine(),
               let id = Int(idStr),
               let index = contatos.firstIndex(where: { $0.id == id }) else {
-            print("❌ ID inválido")
+            print("ID inválido")
             return
         }
         
         print("Novo nome:")
         guard let nome = readLine(), !nome.isEmpty else {
-            print("❌ Nome inválido")
+            print("Nome inválido")
             return
         }
         
         if contatos.contains(where: { $0.nome.lowercased() == nome.lowercased() && $0.id != id }) {
-            print("❌ Nome já existente")
+            print("Nome já existente")
             return
         }
         
         print("Nova idade:")
         guard let idadeStr = readLine(),
               let idade = Int(idadeStr) else {
-            print("❌ Idade inválida")
+            print("Idade inválida")
             return
         }
         
         print("Novo telefone:")
         guard let telefone = readLine(), !telefone.isEmpty else {
-            print("❌ Telefone inválido")
+            print("Telefone inválido")
             return
         }
         
         print("Novo email:")
         guard let email = readLine(), !email.isEmpty else {
-            print("❌ Email inválido")
+            print("Email inválido")
             return
         }
         
@@ -117,7 +117,7 @@ struct GerenciadorContatos {
         contatos[index].telefone = telefone
         contatos[index].email = email
         
-        print("✅ Contato alterado com sucesso!\n")
+        print("Contato alterado com sucesso!\n")
     }
     
     // MARK: - Remoção
@@ -128,7 +128,7 @@ struct GerenciadorContatos {
         guard let idStr = readLine(),
               let id = Int(idStr),
               let index = contatos.firstIndex(where: { $0.id == id }) else {
-            print("❌ ID inválido")
+            print(" ID inválido")
             return
         }
         
@@ -173,9 +173,9 @@ repeat {
     case 4:
         gerenciador.remover()
     case 5:
-        print("👋 Sistema finalizado")
+        print(" Sistema finalizado")
     default:
-        print("❌ Opção inválida")
+        print(" Opção inválida")
     }
     
 } while opcao != 5
